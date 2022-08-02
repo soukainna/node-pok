@@ -1,0 +1,22 @@
+{
+  "name": "node-pok",
+  "version": "1.0.0",
+  "description": "an awsome API REST to handle some pictures.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soukainna/node-pok.git"
+  },
+  "author": "Soukaina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soukainna/node-pok/issues"
+  },
+  "homepage": "https://github.com/soukainna/node-pok#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
