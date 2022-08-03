@@ -26,12 +26,21 @@ app.get('/api/pokemons/:id', (req, res) => {
     const message = 'un pokemon a etait trouver'
     // res.json(pokemon) //ajouter une reponse en JSON
     // res.json(helper.success(message, pokemon))
-    res.success(message, pokemon)
+    res.json(success(message, pokemon))
 })
 
 app.get('/api/pokemons', (req, res) => {
-    const result = pokemons.length
-    res.send(`Il y a ${result} pokemons`)
+    // const result = pokemons.length
+    // res.send(`Il y a ${result} pokemons`)
+    const msg ='list complete de pokemons !'
+    //const tab = []
+    // for (i = 0; i < pokemons.length; i++)
+    // {
+    //     tab.push(pokemons[i])
+    // }
+    // res.json(success(msg, tab))
+    //plus simple
+    res.json(success(msg, pokemons))
 })
 
 app.listen(port, () => { console.log(`notre app Node est demarrée sur http://localhost:${port}`)})
