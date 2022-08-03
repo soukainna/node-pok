@@ -1,6 +1,7 @@
 
 const express = require('express')
 let pokemons = require('./pok-list')
+const morgan = require('morgan')
 //on ajoute notre module hlper
 // const helper = require('./helper')
 //c'est mieux d'utiliser l'affectation structurer 
@@ -9,13 +10,17 @@ const {success} = require('./helper')
 const app = express()
 const port = 3000
 
+
 //utiliser un midlwares 
-const log = (req, res, next) => {
-    console.log(`url ${req.url}`)
-    next()
-}
-//utiliser le midlware pour send les log de url dans le terminal
-app.use(log)
+// const log = (req, res, next) => {
+//     console.log(`url ${req.url}`)
+//     next()
+// }
+// //utiliser le midlware pour send les log de url dans le terminal
+// app.use(log)
+/* on utilisera morgan pour moins de code*/
+app.use(morgan('dev'))
+
 
 app.get('/', (require, response) => {
     response.send('hello express word')
