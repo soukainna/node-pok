@@ -1,6 +1,8 @@
 
 const express = require('express')
 let pokemons = require('./pok-list')
+//on ajoute notre module hlper
+const helper = require('./helper')
 
 const app = express()
 const port = 3000
@@ -19,7 +21,9 @@ app.get('/api/pokemons/:id', (req, res) => {
     // res.send(`Vous avez demander la root du pokemon ${id}`)
     // res.send(`Vous avez demander la root du pokemon ${pokemon.name}`)
     //je vais essayer d'envoyer du JSON
-    res.json(pokemon)
+    const message = 'un pokemon a etait trouver'
+    // res.json(pokemon) //ajouter une reponse en JSON
+    res.json(helper.success(message, pokemon))
 })
 
 app.get('/api/pokemons', (req, res) => {
