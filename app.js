@@ -2,6 +2,10 @@
 const express = require('express')
 let pokemons = require('./pok-list')
 const morgan = require('morgan')
+
+//add my favicon middleware
+const favicon = require('serve-favicon')
+
 //on ajoute notre module hlper
 // const helper = require('./helper')
 //c'est mieux d'utiliser l'affectation structurer 
@@ -19,7 +23,9 @@ const port = 3000
 // //utiliser le midlware pour send les log de url dans le terminal
 // app.use(log)
 /* on utilisera morgan pour moins de code*/
-app.use(morgan('dev'))
+app
+    .use(favicon(__dirname + '/favicon.ico'))
+    .use(morgan('dev'))
 
 
 app.get('/', (require, response) => {
