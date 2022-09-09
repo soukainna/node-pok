@@ -21,7 +21,9 @@ const port = 3000
 //     next()
 // }
 // //utiliser le midlware pour send les log de url dans le terminal
-// app.use(log)
+// app
+// .use(favicon(__dirname +'/favicon.ico'))
+// .use(log)
 /* on utilisera morgan pour moins de code*/
 app
     .use(favicon(__dirname + '/favicon.ico'))
